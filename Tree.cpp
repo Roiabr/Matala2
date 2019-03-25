@@ -71,7 +71,7 @@ int ariel::Tree::parent(Node* node,int i){
 
     if(node->data < i)
        return parent(node->right,i);
-    if(node->data == i)
+    if(node->data == i || node == NULL)
     {
         ::__throw_bad_exception();
     }
@@ -95,14 +95,14 @@ void ariel::Tree::print(Node *root, int space)
     ariel::Tree::print(root->left, space);  
 }  
 
+
+
+
+///////////////////////////////////////////
 void ariel::Tree::print()  
 {  
      ariel::Tree::print(node, 0);  
 }  
-
-
-
-
 void ariel::Tree::insert(int x)
 {
         node = insert(x, node);
