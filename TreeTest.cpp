@@ -67,6 +67,8 @@ int main() {
   .CHECK_EQUAL (fivetree.contains(28), true)
   .CHECK_EQUAL (fivetree.contains(5), false)
   .CHECK_THROWS(fivetree.insert(28))
+  .CHECK_OK     (fivetree.remove(28))
+  .CHECK_THROWS   (fivetree.remove(28))
   .CHECK_OK    (fivetree.print());
   
   
