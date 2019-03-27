@@ -46,10 +46,11 @@ public:
        int parent(int i);
        int parent(Node* node,int i);
        int left(int i);
-//       int left(Node* node,int i);
+       int left(Node* node,int i);
        int right(int i);
-//       int right(Node* node,int i);
+       int right(Node* node,int i);
        void print();
        void print(Node* node,int a);
+       Node* search(Node* node, int key);
 };
 }

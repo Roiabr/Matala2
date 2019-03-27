@@ -18,8 +18,8 @@ Node* ariel::Tree::insert(int num,Node* node){
         ::__throw_bad_exception();
         
     }
-
     return node;
+    
 }
 int ariel::Tree::size(Node* node){
     if (node == NULL)  
@@ -75,6 +75,7 @@ int ariel::Tree::parent(Node* node,int i){
     {
         ::__throw_bad_exception();
     }
+    return 0;
 }
 void ariel::Tree::print(Node *root, int space)  
 {  
@@ -94,6 +95,45 @@ void ariel::Tree::print(Node *root, int space)
    
     ariel::Tree::print(root->left, space);  
 }  
+int ariel::Tree::right(Node* node,int i)
+{
+    if(ariel::Tree::contains(i) == false){
+        ::__throw_bad_exception();
+    }
+    else
+    {
+        Node* find = new Node(0);
+        find = ariel::Tree::search(node,i);
+        return find->right->data;
+    }
+    
+}
+int ariel::Tree::left(Node* node,int i)
+{
+    if(ariel::Tree::contains(i) == false){
+        ::__throw_bad_exception();
+    }
+    else
+    {
+        Node* find = new Node(0);
+        find = ariel::Tree::search(node,i);
+        return find->left->data;
+    }
+    
+}
+Node* ariel::Tree::search(Node* node, int key) 
+{ 
+    // Base Cases: root is null or key is present at root 
+    if (node == NULL || node->data == key) 
+       return node; 
+     
+    // Key is greater than root's key 
+    if (node->data < key) 
+       return search(node->right, key); 
+  
+    // Key is smaller than root's key 
+    return search(node->left, key); 
+} 
 
 
 
@@ -134,10 +174,12 @@ bool ariel::Tree::remove(int i)
 }
 int ariel::Tree::right(int i)
 {
-    return 1;
+    int data = right(node,i);
+    return data;
 }
 int ariel::Tree::left(int i)
 {
-    return 1;
+    int data = left(node,i);
+    return data;
 }
 
