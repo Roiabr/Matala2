@@ -25,10 +25,11 @@ int main() {
     threetree.insert(5);
     threetree.insert(7);
     threetree.insert(3);
+    threetree.insert(4);
+    threetree.remove(4);
     cout << "threetree: size=" << threetree.size() << " root=" << threetree.root() << endl;  // size=3, root=5.
     threetree.print();
     cout << "is the number in the tree? " << threetree.contains(5) << endl;
-    cout <<"the parent is: " << threetree.parent(3);
     cout << endl;
       
     cout << "second size: " << threetree.size() << endl;     // should print 3
@@ -36,6 +37,7 @@ int main() {
     cout <<"the parant of 7 is: " <<  threetree.parent(7) << endl;   // should print 5
     cout << threetree.left(5) << endl;     // should print 3
     cout << threetree.right(5) << endl;   // should print 7
+    
          
     threetree.insert(5);    // should throw an exception, since 5 already exists.
   } catch (...) {

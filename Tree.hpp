@@ -9,11 +9,17 @@ struct Node {
         this->data = val;
     }
 
-    Node(int val, Node* left, Node* right) {
+    Node(int val, Node* left, Node* right) 
+    {
         this->data = val;
         this->left = left;
         this->right = right;
     }
+    ~Node(){
+        free(this->left);
+        free(this->right);
+    }
+    
 };
 namespace ariel{
 class Tree{
@@ -32,17 +38,21 @@ public:
            node->left = NULL;
            node->right = NULL;
        }
-      
+       ~Tree();
+       void DeleteRecursive(Node* node);
        void insert(int num);
        Node* insert(int num,Node* node);
-//       bool remove(Node* node,int num);
-       bool remove(int i);
+       Node* remove(Node *node, int data);
+       Node* deleteNode( Node* node, int key);
+       Node* minValueNode(Node* node);
+       Node* FindMin(Node* node);
+       void Inorder(Node *node);
+       void remove(int i);
        int size();
        int size(Node* node);
        bool contains(Node* node,int i);
        bool contains(int num);
        int root();
-       int root(Node* node);
        int parent(int i);
        int parent(Node* node,int i);
        int left(int i);
