@@ -10,6 +10,7 @@ ariel::Tree::~Tree()
    DeleteRecursive(node);
 }
 
+
 void ariel::Tree::DeleteRecursive(Node* node)
 {
     if (node)
@@ -157,11 +158,11 @@ Node* ariel::Tree::search(Node* node, int key)
 void ariel::Tree::remove (int i){
         if (node==NULL)
         {
-             std::__throw_bad_exception ();
+             ::__throw_bad_exception();
         }
-    else if (contains(i)==false)
+        else if (contains(i)==false)
         {
-             std::__throw_bad_exception ();
+             ::__throw_bad_exception ();
         }
         else
         {
@@ -241,7 +242,7 @@ void ariel::Tree::print()
 void ariel::Tree::insert(int x)
 {
         node = insert(x, node);
-        // free(node);
+        
 }
 int ariel::Tree::size()
 {

@@ -15,11 +15,7 @@ struct Node {
         this->left = left;
         this->right = right;
     }
-    ~Node(){
-        free(this->left);
-        free(this->right);
-    }
-    
+
 };
 namespace ariel{
 class Tree{
